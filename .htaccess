@@ -1,0 +1,9 @@
+Options -Indexes
+#ErrorDocument 404 /index.php
+DirectoryIndex index.php
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+
+php_flag html_errors off
